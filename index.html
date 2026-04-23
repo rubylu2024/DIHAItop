@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居中视频播放器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+        }
+        
+        .video-container {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video 
+            id="video-player"
+            src="kawaboi.mp4" 
+            autoplay 
+            loop 
+            playsinline
+            controls
+        >
+            您的浏览器不支持视频播放
+        </video>
+    </div>
+    <script>
+        const video = document.getElementById('video-player');
+        video.volume = 1.0;
+        video.addEventListener('loadedmetadata', function() {
+            video.play();
+        });
+        video.addEventListener('canplay', function() {
+            if (video.paused) {
+                video.muted = true;
+                video.play().then(() => {
+                    setTimeout(() => {
+                        video.muted = false;
+                    }, 100);
+                }).catch(err => {
+                    console.log('自动播放被阻止');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
