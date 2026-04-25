@@ -351,8 +351,10 @@
                                 <h4>近期热帖</h4>
                             </div>
                             <ul>
-                                <li><a href="post.html?id=1">【城市论坛】说说你在的城市，一个月工资能买几平米？房价到底怎么涨？</a></li>
+                                <li><a href="post.html?id=1">说说你在的城市，一个月工资能买几平米？房价到底怎么涨？</a></li>
                                 <li><a href="post.html?id=2">关于开展“拒绝黄赌毒、共建平安社区”宣传教育活动的通知</a></li>
+                                <li><a href="post.html?id=5">转！！！中国式骗局大全 帖主我是骗子他祖宗</a></li>
+                                <li><a href="post.html?id=4">结婚两年，老公嫌我胖，我想离婚了，该怎么继续……</a></li>
                             </ul>
                         </div>
                     </div>
@@ -421,11 +423,11 @@
                             <div class="sidebar-section">
                                 <h3>社区公告</h3>
                                 <ul>
-                                    <li><a href="#">- 论坛规则【新人必看】</a></li>
-                                    <li><a href="#">- 新手帮助</a></li>
-                                    <li><a href="#">- 版主申请/招募</a></li>
+                                    <li><a href="rules.html">- 论坛规则【新人必看】</a></li>
+                                    <li><a href="help.html">- 新手帮助</a></li>
+                                    <li><a href="javascript:alert('对不起，版主申请功能暂未开放！')">- 版主申请/招募</a></li>
                                     <li><a href="violation.html">- 违规公示</a></li>
-                                    <li><a href="#">- 意见反馈</a></li>
+                                    <li><a href="javascript:alert('如果有任何意见或建议，可以发送到backtothesky3849@dihai.top或联系QQ3853622361')">- 意见反馈</a></li>
                                 </ul>
                             </div>
                             <div class="sidebar-ad">
@@ -449,18 +451,19 @@
     <script src="script.js"></script>
     
     <!-- 浮窗导航图标 -->
-    <div class="floating-ad">
+    <div class="floating-ad" onclick="window.location.href='no-permission.html'">
         <img src="images/红蜻蜓.png" alt="红蜻蜓">
     </div>
     
     <!-- 浮窗广告 -->
-    <div class="floating-ad2">
+    <div class="floating-ad2" onclick="window.location.href='no-permission.html'">
         <img src="images/浮窗广告.png" alt="广告">
     </div>
     
     <!-- 右下角弹窗广告 -->
     <div class="popup-ad">
-        <div class="popup-content">
+        <div class="popup-content" onclick="window.location.href='no-permission.html'">
+            <span class="fake-close-btn" style="position: absolute; top: 0; right: 0; background: rgba(0,0,0,0.3); color: white; padding: 0 4px; font-size: 10px; cursor: pointer; z-index: 10;">×</span>
             <img src="images/换脑广告.gif" alt="换脑广告">
             <button class="popup-close">关闭</button>
         </div>
@@ -468,7 +471,7 @@
     
     <!-- 左侧假关闭按钮（实际是跳转链接） -->
     <div class="left-close-btn">
-        <span class="popup-close" data-href="https://www.bilibili.com/video/BV1UT42167xb?t=0">关闭广告</span>
+        <span class="popup-close">关闭广告</span>
     </div>
 </body>
 </html>

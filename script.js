@@ -17,7 +17,7 @@ function getFallbackPostData(postId) {
     const fallbackData = {
         "1": {
             "id": 1,
-            "title": "【城市论坛】说说你在的城市，一个月工资能买几平米？房价到底怎么涨？",
+            "title": "说说你在的城市，一个月工资能买几平米？房价到底怎么涨？",
             "author": "☆_房产の观察家_☆",
             "authorLevel": "Lv.3 中级会员",
             "authorAvatar": "images/用户头像.png",
@@ -53,6 +53,169 @@ function getFallbackPostData(postId) {
             "allowComments": false,
             "content": "<p>福云路沿街各商铺、彩票销售网点、棋牌室、网吧、茶楼及全体居民：</p><p>近期接群众反映，我辖区个别场所存在疑似聚众赌博、地下字谜投注等不良现象。为进一步净化社区环境，特此重申：</p><p>一、严禁任何形式的赌博行为。包括但不限于：以营利为目的的棋牌局、利用网络平台进行的第三方投注、以“字画竞猜”或“生肖走势分析”为名义的变相聚赌。</p><p>二、彩票销售网点须持证经营。不得私自提供开奖趋势图、“内部参考图”或任何形式的“规律分析图”，不得向未成年人出售彩票。所谓“福粮”“内参”“玄机”等非法印刷品一经发现，立即收缴。</p><p>三、棋牌室、茶楼等场所须在晚23时前停止营业。严禁以“朋友消遣”为名组织大规模现金麻将局，不得容留陌生人员进行约定时间的轮换牌局。如有发现按聚众赌博论处</p><p>四、警惕以“文化交流”为名的非法出版物。近期发现有人以“字花”旧报合订本等形式夹带敏感内容向中老年人兜售。此类物品中常印有所谓“某某大师独家解密”等诱导性话术，本质是赌博投注的变体，请居民一旦发现及时举报。</p><p>五、请将本公告张贴于各楼栋单元入口。本周三上午九点将在福云小区中心广场举办“平安社区”现场宣讲，届时会有实物展示（含近期查获的印刷品如“福粮图”教具）供居民辨别。</p><p>举报电话：宁水市公安局闵江分局治安大队 053X-XXXXXXX<br>宁水市闵江区福云路街道办<br>2012年8月20日</p>",
             "comments": []
+        },
+        "4": {
+            "id": 4,
+            "title": "结婚两年，老公嫌我胖，我想离婚了，该怎么继续……",
+            "author": "紫色的梦",
+            "authorLevel": "Lv.2 初级会员",
+            "authorAvatar": "梦",
+            "publishTime": "2010-07-15 14:23:00",
+            "viewCount": 1582,
+            "allowComments": true,
+            "content": "<p>我和老公是大学同学，恋爱五年结了婚，到现在刚好两年。结婚前 I 98斤，他天天说就喜欢我这样肉肉的。结婚后我因为工作压力大、内分泌失调胖了差不多三十斤，唉，我自己都天天焦虑呢……上个月他开始嫌我胖，一开始还是开玩笑呢，后来又认真地说让我减肥，他以前从不这样说我的。我试着减了，每天下班回来晚饭不吃，还跳绳，瘦了五斤又反弹了。昨天晚上他去洗澡了，我看见他和堂弟的微信聊天记录，说我胖，没有腰摸起来没有灵魂。不如他的前女友瘦可以各种姿势，玩得好天天想。还有半个月就到我们两周年纪念日了，看到后我没跟他说，不过心里想离婚。我可以瘦，可以减肥，但我不想讨好一个真心嫌弃我的人。</p><p>他比我小十个月，我今年也快三十了，还没要孩子。我觉得他是一个自私的人，这么大了只顾自己，钱也赚不了多少，可我自己没有存款，也不敢离婚。</p><p>心里苦！不知道该对谁说……女人上哪去找一个真心爱自己的男人？</p>",
+            "comments": [
+                {
+                    "id": 1,
+                    "author": "暖心小贴士",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "贴",
+                    "time": "2010-07-15 15:10:22",
+                    "floor": 2,
+                    "content": "<p>抱抱楼主。我老公以前也嫌 v 胖，我当时直接回了一句“看看你自己的样子”。男人就是欠教育</p>"
+                },
+                {
+                    "id": 2,
+                    "author": "职场理智姐",
+                    "authorLevel": "Lv.4 高级会员",
+                    "authorAvatar": "姐",
+                    "time": "2010-07-15 15:45:10",
+                    "floor": 3,
+                    "content": "<p>这体重也不胖呀？你长胖是因为内分泌失调，内分泌失调是因为压力大，压力大是因为什么你心里清楚。听姐的，把压力源头解决掉，比减肥管用！</p>"
+                },
+                {
+                    "id": 3,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 16:02:45",
+                    "floor": 4,
+                    "content": "<p>谢谢。压力源头可能是我婆婆，她一直想让我们生孩子，但我老公说现在不是时候。每次回去吃饭她都用那种眼神看我，我去她家比上班还累，更可恨的是我老公当着家人朋友的面从不嫌我，还说胖点好，叫我多吃点。</p>",
+                    "replyTo": 3
+                },
+                {
+                    "id": 4,
+                    "author": "辣妈萌宝",
+                    "authorLevel": "Lv.3 中级会员",
+                    "authorAvatar": "宝",
+                    "time": "2010-07-15 16:30:15",
+                    "floor": 5,
+                    "content": "<p>有孩子了吗？没有的话还好办。我生完孩子胖了二十斤，我老公屁都不敢放，敢离我就敢带孩子走，他有话说不？胖点又咋了？你就是太在意他怎么看你了</p>"
+                },
+                {
+                    "id": 5,
+                    "author": "健身达人阿强",
+                    "authorLevel": "Lv.5 社区元老",
+                    "authorAvatar": "强",
+                    "time": "2010-07-15 17:15:40",
+                    "floor": 6,
+                    "content": "<p>姐妹们听我说，我三个月瘦了二十斤，没靠什么药物和手术，就是管住嘴迈开腿，每天一万步！碳水全断，晚餐六点之前吃完。变美不是为了男人，是为了自己！</p>"
+                },
+                {
+                    "id": 6,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 17:45:12",
+                    "floor": 7,
+                    "content": "<p>我试过断碳水，但上班很难提起精神，集中不了注意力呀</p>",
+                    "replyTo": 6
+                },
+                {
+                    "id": 7,
+                    "author": "情感小魔女",
+                    "authorLevel": "Lv.3 中级会员",
+                    "authorAvatar": "魔",
+                    "time": "2010-07-15 18:20:05",
+                    "floor": 8,
+                    "content": "<p>这种男的就欠治，楼主我教你一招，你也开始嫌弃他。嫌他头发少，嫌他挣钱不多，嫌他妈宝，嫌他各种！然后当你真的开始挑剔他，你就不那么害怕他挑剔你了，亲测有效！哈哈哈！</p>"
+                },
+                {
+                    "id": 8,
+                    "author": "路边小草",
+                    "authorLevel": "Lv.1 新手上路",
+                    "authorAvatar": "草",
+                    "time": "2010-07-15 19:10:30",
+                    "floor": 9,
+                    "content": "<p>说到这个我突然想起来，楼主有没有试过报个课？你这种属于心理问题，我表姐当年也是因为类似的事闹得差点离婚，后来她也是打算报一个什么帮人调整心态的机构，不过好像没报上名</p>"
+                },
+                {
+                    "id": 9,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 19:35:18",
+                    "floor": 10,
+                    "content": "<p>你说的那种机构我不了解。我同事倒是推荐过一个什么心理课程，我还没去问。</p>",
+                    "replyTo": 9
+                },
+                {
+                    "id": 10,
+                    "author": "真相只有一个",
+                    "authorLevel": "Lv.4 高级会员",
+                    "authorAvatar": "真",
+                    "time": "2010-07-15 20:15:00",
+                    "floor": 11,
+                    "content": "<p>可以是可以，但也得谨慎选择！我一个同学以前就进过这种机构，入学费好像五六千还是多少。后来应该是出什么事了吧，反正搬走了，去年路过看到外面挂着招租的牌子。提醒楼主看到那种学校绕着走。正规心理咨询去三甲医院，越神秘的越有猫腻</p>"
+                },
+                {
+                    "id": 11,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 20:45:00",
+                    "floor": 12,
+                    "content": "<p>谢谢提醒，我没打算报什么学校，没钱也没时间……</p>",
+                    "replyTo": 11
+                },
+                {
+                    "id": 12,
+                    "author": "理智分析师",
+                    "authorLevel": "Lv.4 高级会员",
+                    "authorAvatar": "理",
+                    "time": "2010-07-15 21:10:00",
+                    "floor": 13,
+                    "content": "<p>帖子有点歪了哈，正个楼，离不离是大事，但在此之前，试着找一份不需要在意他眼光的事做，业余时间有自己能投入的东西，你的情绪独立性会强很多。至于减肥，等你不那么焦虑了自然会瘦，身体很诚实</p>"
+                },
+                {
+                    "id": 13,
+                    "author": "江湖百晓生",
+                    "authorLevel": "Lv.3 中级会员",
+                    "authorAvatar": "生",
+                    "time": "2010-07-15 21:35:00",
+                    "floor": 14,
+                    "content": "<p>对对对，我表姐也是，不知道从哪听来这么个机构，只不过我姐夫觉得是骗钱的没让她去，后来就没听说过了。估计真是骗钱的，倒闭了吧！呵呵！</p>",
+                    "replyTo": 11
+                },
+                {
+                    "id": 14,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 22:05:00",
+                    "floor": 15,
+                    "content": "<p>你说得对，我确实什么自己的事都没在做。自从结了婚，自己的时间就被褫夺了，以前还画点画，结婚后再也没碰过，为柴米油盐酱醋茶操碎了心！我今晚上翻一翻以前的本子</p>",
+                    "replyTo": 13
+                },
+                {
+                    "id": 15,
+                    "author": "画笔生花",
+                    "authorLevel": "Lv.3 中级会员",
+                    "authorAvatar": "画",
+                    "time": "2010-07-15 22:30:00",
+                    "floor": 16,
+                    "content": "<p>画！画起来！画得好不好不重要，重要的是那是你自己的东西。你老公嫌你胖是他的问题，你把画笔捡起来是你的问题。加油楼主！</p>"
+                },
+                {
+                    "id": 16,
+                    "author": "紫色的梦",
+                    "authorLevel": "Lv.2 初级会员",
+                    "authorAvatar": "梦",
+                    "time": "2010-07-15 22:50:00",
+                    "floor": 17,
+                    "content": "<p>谢谢大家，我去找速写本了。婚姻的事我再想想。</p>"
+                }
+            ]
         }
     };
     return fallbackData[postId] || null;
@@ -62,7 +225,7 @@ function getFallbackPostData(postId) {
 // 获取帖子列表（从data文件夹读取）
 async function loadPostList() {
     const postList = [];
-    const postIds = [1, 2, 3, 4, 5];
+    const postIds = [1, 2, 4, 5];
     
     for (const id of postIds) {
         try {
@@ -233,7 +396,7 @@ function renderForumThread(postData) {
         <div class="thread-header">
             <div class="thread-title">${postData.title}</div>
             <span>作者：<a href="#" style="color: #0066cc;">${postData.author}</a></span> | 
-            <span>发表于：${postData.publishTime.split(' ')[0]}</span> | 
+            <span>发表于：${postData.publishTime}</span> | 
             <span>浏览：${postData.viewCount}次</span>
         </div>
         
@@ -246,7 +409,12 @@ function renderForumThread(postData) {
                     ${quoteHTML}
                     <div class="post-header">
                         <div class="poster-info">
-                            <div class="avatar"><img src="${post.authorAvatar}" alt="avatar" style="width:100%; height:100%; border-radius:3px; object-fit:cover;"></div>
+                            <div class="avatar">
+                                ${post.authorAvatar && post.authorAvatar.length === 1 
+                                    ? `<span style="font-size: 24px; color: #666; font-weight: bold;">${post.authorAvatar}</span>` 
+                                    : `<img src="${post.authorAvatar || 'images/用户头像.png'}" alt="avatar" style="width:100%; height:100%; border-radius:3px; object-fit:cover;">`
+                                }
+                            </div>
                             <div>
                                 <div class="poster-name ${post.isOp ? 'op' : ''}">${post.author}</div>
                                 <div style="font-size: 11px; color: #999;">${post.authorLevel}</div>
@@ -608,7 +776,8 @@ function setupPopupAd() {
         updateLeftCloseBtnPosition();
     });
     
-    closeButton.addEventListener('click', function() {
+    closeButton.addEventListener('click', function(e) {
+        e.stopPropagation();
         popupAd.style.display = 'none';
         if (leftCloseBtn) {
             leftCloseBtn.style.display = 'none';
@@ -618,15 +787,21 @@ function setupPopupAd() {
         }
     });
 
-    // 处理假关闭按钮的点击跳转，隐藏链接预览
+    // 处理假关闭按钮的点击跳转
+    const fakeCloseBtn = popupAd.querySelector('.fake-close-btn');
+    if (fakeCloseBtn) {
+        fakeCloseBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.location.href = 'https://www.bilibili.com/video/BV1UT42167xb?t=0';
+        });
+    }
+
     if (leftCloseBtn) {
-        const fakeCloseBtn = leftCloseBtn.querySelector('.popup-close');
-        if (fakeCloseBtn) {
-            fakeCloseBtn.addEventListener('click', function() {
-                const url = this.getAttribute('data-href');
-                if (url) {
-                    window.open(url, '_blank');
-                }
+        const sideFakeBtn = leftCloseBtn.querySelector('.popup-close');
+        if (sideFakeBtn) {
+            sideFakeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                window.location.href = 'https://www.bilibili.com/video/BV1UT42167xb?t=0';
             });
         }
     }
