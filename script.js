@@ -1,3 +1,6 @@
+// 页面加载完成后执行
+// 页面加载完成后执行已经包含在下方的 window.addEventListener('DOMContentLoaded', ...)
+
 // 动态加载帖子数据
 async function loadPostData(postId) {
     try {
@@ -225,7 +228,7 @@ function getFallbackPostData(postId) {
 // 获取帖子列表（从data文件夹读取）
 async function loadPostList() {
     const postList = [];
-    const postIds = [1, 2, 4, 5];
+    const postIds = [1, 2, 4, 5, 6];
     
     for (const id of postIds) {
         try {
@@ -249,6 +252,21 @@ async function loadPostList() {
 
 // 页面加载完成后执行
 window.addEventListener('DOMContentLoaded', function() {
+    // 处理所有 href="#" 的链接
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('a');
+        if (target && target.getAttribute('href') === '#') {
+            // 排除掉已经有特定功能的链接（如回复、取消回复、退出登录等）
+            if (target.classList.contains('reply-link') || 
+                target.id === 'cancel-reply' || 
+                target.id === 'logout-btn') {
+                return;
+            }
+            e.preventDefault();
+            alert('暂未开放');
+        }
+    });
+
     // 清理所有遗留的localStorage数据
     localStorage.clear();
     
@@ -539,8 +557,8 @@ function updateUserLinks() {
         }
     } else {
         userLinksContainer.innerHTML = `
-            <a href="user-login.html">登录</a>
-            <a href="register.html">注册</a>
+            <a href="javascript:void(0)" onclick="alert('此功能已被管理员禁用！')">登录</a>
+            <a href="javascript:void(0)" onclick="alert('此功能已被管理员禁用！')">注册</a>
         `;
     }
 }

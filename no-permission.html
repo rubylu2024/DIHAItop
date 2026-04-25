@@ -92,8 +92,8 @@
                             </button>
                             <a href="#">服务</a>
                             <div id="user-links-container">
-                                <a href="user-login.html">登录</a>
-                                <a href="register.html">注册</a>
+                                <a href="javascript:void(0)" onclick="alert('此功能已被管理员禁用！')">登录</a>
+                                <a href="javascript:void(0)" onclick="alert('此功能已被管理员禁用！')">注册</a>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
             <div class="status-bar">
                 <div class="status-container">
                     <span>我的红蜻蜓</span>
-                    <span class="status-right">消息</span>
+                    <span class="status-right" style="position: relative; cursor: pointer;" onclick="window.location.href='message.html'">消息<span class="unread-badge">1</span></span>
                 </div>
             </div>
         </div>
