@@ -11,136 +11,136 @@
     "comments": [
         {
             "id": 1,
-            "author": "1L",
+            "author": "快乐的小二郎",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "1",
+            "authorAvatar": "快",
             "time": "2015-05-13 00:15:00",
             "floor": 2,
             "content": "<p>沙发。楼主神神叨叨说什么呢？蹲省流</p>"
         },
         {
             "id": 2,
-            "author": "2L",
+            "author": "追风少年2010",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "2",
+            "authorAvatar": "追",
             "time": "2015-05-13 00:30:00",
             "floor": 3,
             "content": "<p>难不成真的有脑控吗？以前刷到过，还以为是精神方面的问题。</p>"
         },
         {
             "id": 3,
-            "author": "3L",
+            "author": "柠檬不萌",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "3",
+            "authorAvatar": "柠",
             "time": "2015-05-13 00:45:00",
             "floor": 4,
             "content": "<p>来个人说说，是不是真的啊？看得我浑身鸡皮疙瘩</p>"
         },
         {
             "id": 4,
-            "author": "4L",
+            "author": "往事如烟",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "4",
+            "authorAvatar": "往",
             "time": "2015-05-13 01:10:00",
             "floor": 5,
             "content": "<p>抱抱楼主，以后会好起来的！</p>"
         },
         {
             "id": 5,
-            "author": "5L",
+            "author": "浅笑安然",
             "authorLevel": "Lv.4 高级会员",
-            "authorAvatar": "5",
+            "authorAvatar": "浅",
             "time": "2015-05-13 08:30:00",
             "floor": 6,
             "content": "<p>看完了，楼主描述得好真实。我大学修过心理学，感觉楼主的症状有点像认知扭曲。我记得这种症状最常见的病因就是精神失常，大脑神经错乱，楼主你真的没失心疯吗？</p>"
         },
         {
             "id": 6,
-            "author": "6L",
+            "author": "北巷长歌",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "6",
+            "authorAvatar": "北",
             "time": "2015-05-13 09:15:00",
             "floor": 7,
-            "content": "<p>回复5L：学艺不精就别乱说，受外界影响也有可能好吧</p>",
+            "content": "<p>回复浅笑安然：学艺不精就别乱说，受外界影响也有可能好吧</p>",
             "replyTo": 5
         },
         {
             "id": 7,
-            "author": "7L",
+            "author": "南笙挽风",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "7",
+            "authorAvatar": "南",
             "time": "2015-05-13 10:20:00",
             "floor": 8,
             "content": "<p>我是庆大的，楼主说的那个反脑控组织我也有印象，当时我还在念书呢，那天乌泱泱的来了好多警察，就在我们学校旁边抓的人，可吓人了。</p>"
         },
         {
             "id": 8,
-            "author": "8L",
+            "author": "晨曦微露",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "8",
+            "authorAvatar": "晨",
             "time": "2015-05-13 11:45:00",
             "floor": 9,
             "content": "<p>到底发生了什么啊？如果真的是被人控制了的话，那那些人为什么要控制你们呢？难道就为了把你们害得家破人亡？</p>"
         },
         {
             "id": 9,
-            "author": "9L",
+            "author": "暮色苍茫",
             "authorLevel": "Lv.3 中级会员",
-            "authorAvatar": "9",
+            "authorAvatar": "暮",
             "time": "2015-05-13 13:20:00",
             "floor": 10,
             "content": "<p>楼上，有钱能使鬼推磨，估计就那档子事啦。话说楼主，既然你进过那个组织，有没有什么内部消息之类的？</p>"
         },
         {
             "id": 10,
-            "author": "10L",
+            "author": "指尖的温柔",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "0",
+            "authorAvatar": "指",
             "time": "2015-05-13 14:40:00",
             "floor": 11,
             "content": "<p>我怎么看不懂上面几楼在说什么，有没有好心人能跟我解释一下……关爱一下外地人好破……</p>"
         },
         {
             "id": 11,
-            "author": "11L",
+            "author": "浮生若梦",
             "authorLevel": "Lv.3 中级会员",
-            "authorAvatar": "1",
+            "authorAvatar": "浮",
             "time": "2015-05-13 15:15:00",
             "floor": 12,
             "content": "<p>就是09年的时候那个反脑控组织被一锅端了，当时还上了新闻。主要是因为死了两个人。</p>"
         },
         {
             "id": 12,
-            "author": "12L",
+            "author": "盛夏光年",
             "authorLevel": "Lv.3 中级会员",
-            "authorAvatar": "2",
+            "authorAvatar": "盛",
             "time": "2015-05-13 16:30:00",
             "floor": 13,
             "content": "<p>这么一说我也想起来了，死了两个学生……我记得都还是中学生呢</p>"
         },
         {
             "id": 13,
-            "author": "13L",
+            "author": "独家记忆",
             "authorLevel": "Lv.4 高级会员",
-            "authorAvatar": "3",
+            "authorAvatar": "独",
             "time": "2015-05-13 17:10:00",
             "floor": 14,
             "content": "<p>哎哟，我当时老爱去报刊亭买书报杂志看，这事儿可是头条新闻！说起来谁信呀？什么反脑控的，感觉像中邪了似的……</p>"
         },
         {
             "id": 14,
-            "author": "14L",
+            "author": "墨染锦年",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "4",
+            "authorAvatar": "墨",
             "time": "2015-05-13 18:25:00",
             "floor": 15,
             "content": "<p>呸呸呸！可别乱说话，当时闹得大，后来可就没消息了，谁知道会不会缠上我们普通人。楼主不也是普通人吗？说起来，楼主有没有总结过那个组织里的共同特征？按理来说，总得有个共同点吧？</p>"
         },
         {
             "id": 15,
-            "author": "15L",
+            "author": "岁月静好",
             "authorLevel": "Lv.4 高级会员",
-            "authorAvatar": "5",
+            "authorAvatar": "岁",
             "time": "2015-05-13 19:40:00",
             "floor": 16,
             "content": "<p>话说你们都没人在意楼主的精神状态吗？有没有懂行的能帮忙看看？</p>"
@@ -156,40 +156,40 @@
         },
         {
             "id": 17,
-            "author": "17L",
+            "author": "凉城美景",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "7",
+            "authorAvatar": "凉",
             "time": "2015-05-13 21:30:00",
             "floor": 18,
             "content": "<p>怎么都默认是怪力乱神了，作为21世纪的新青年，搞这些迷信可要不得哦~</p>"
         },
         {
             "id": 18,
-            "author": "18L",
+            "author": "陌上花开",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "8",
+            "authorAvatar": "陌",
             "time": "2015-05-13 22:05:00",
             "floor": 19,
             "content": "<p>那楼上有什么高见吗？</p>"
         },
         {
             "id": 19,
-            "author": "19L",
+            "author": "昨夜星辰",
             "authorLevel": "Lv.3 中级会员",
-            "authorAvatar": "9",
+            "authorAvatar": "昨",
             "time": "2015-05-13 22:40:00",
             "floor": 20,
-            "content": "<p>回复18L：我是觉得吧，哪有楼主说得那么夸张，就算真有这事，跟父母说说，去医院看看不就得了？要是真进了精神病院，那不正说明楼主纯纯精神病吗~</p>",
+            "content": "<p>回复陌上花开：我是觉得吧，哪有楼主说得那么夸张，就算真有这事，跟父母说说，去医院看看不就得了？要是真进了精神病院，那不正说明楼主纯纯精神病吗~</p>",
             "replyTo": 18
         },
         {
             "id": 20,
-            "author": "20L",
+            "author": "半盏流年",
             "authorLevel": "Lv.2 初级会员",
-            "authorAvatar": "0",
+            "authorAvatar": "半",
             "time": "2015-05-13 23:15:00",
             "floor": 21,
-            "content": "<p>19L骂谁精神病呢- -真是站着说话不腰疼，出门右转不谢</p>"
+            "content": "<p>昨夜星辰骂谁精神病呢- -真是站着说话不腰疼，出门右转不谢</p>"
         }
     ]
 }
