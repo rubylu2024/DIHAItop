@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>红蜻蜓论坛.Beta - 说说你在的城市，一个月工资能买几平米？</title>
+    <title>红蜻蜓论坛.Beta - 【城市论坛】说说你在的城市，一个月工资能买几平米？</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* 论坛风格样式 */
@@ -52,15 +52,16 @@
         .avatar {
             width: 48px;
             height: 48px;
-            background: #E8E8E8;
+            background: #E8E8E8 url('images/用户头像.png') no-repeat center center;
+            background-size: cover;
             border: 1px solid #ccc;
             border-radius: 3px;
             margin-right: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            color: #666;
+            font-size: 0;
+            color: transparent;
         }
 
         .poster-name {
@@ -193,17 +194,40 @@
         }
 
         .quote-box {
-            background: #f9f9f9;
-            border-left: 3px solid #0066cc;
+            border: 1px solid #ddd;
             padding: 8px 12px;
-            margin-bottom: 10px;
+            margin: 5px 0 10px 0;
             font-size: 13px;
             color: #666;
         }
 
+        /* 第一层：蓝色主题 */
+        .quote-level-0 {
+            background: #f9fbfd;
+            border-left: 3px solid #0066cc;
+        }
+        .quote-level-0 .quote-author { color: #0066cc; }
+
+        /* 第二层：绿色主题 */
+        .quote-level-1 {
+            background: #f8fcf8;
+            border-left: 3px solid #28a745;
+            margin: 5px 0;
+            padding: 5px 8px;
+        }
+        .quote-level-1 .quote-author { color: #28a745; }
+
+        /* 第三层：橙色主题 */
+        .quote-level-2 {
+            background: #fffdf9;
+            border-left: 3px solid #fd7e14;
+            margin: 5px 0;
+            padding: 5px 8px;
+        }
+        .quote-level-2 .quote-author { color: #fd7e14; }
+
         .quote-box .quote-author {
             font-weight: bold;
-            color: #0066cc;
             margin-bottom: 4px;
         }
 
@@ -253,6 +277,11 @@
     <audio id="background-music" src="audio/红蜻蜓.mp3" loop>
         Your browser does not support the audio element.
     </audio>
+    
+    <!-- 弹窗广告音频 -->
+    <audio id="popup-audio" src="audio/哥只是个传说.mp3" loop>
+        Your browser does not support the audio element.
+     </audio>
 
     <div class="forum-frame-outer">
         <div class="forum-content">
@@ -269,7 +298,7 @@
                         <a href="index.html">论坛</a>
                         <a href="#">博客</a>
                         <a href="#">问答</a>
-                        <a href="#">游戏厅</a>
+                        <a href="https://www.4399.com" target="_blank">游戏厅</a>
                         <a href="#">品牌</a>
                         <a href="#">更多</a>
                     </div>
@@ -315,14 +344,15 @@
                 <div class="left-sidebar">
                     <div class="scrollable-section">
                         <div class="section-header">
-                            <span>近期热帖</span>
+                            <span>【公告】</span>
                         </div>
                         <div class="scrollable-content">
                             <div class="announcement">
-                                <h4>【公告】</h4>
+                                <h4>近期热帖</h4>
                             </div>
                             <ul>
-                                <li><a href="post.html?id=1">说说你在的城市，一个月工资能买几平米？房价到底怎么涨？</a></li>
+                                <li><a href="post.html?id=1">【城市论坛】说说你在的城市，一个月工资能买几平米？房价到底怎么涨？</a></li>
+                                <li><a href="post.html?id=2">关于开展“拒绝黄赌毒、共建平安社区”宣传教育活动的通知</a></li>
                             </ul>
                         </div>
                     </div>
@@ -330,29 +360,29 @@
                         <h3>版面推荐</h3>
                         <div class="double-columns">
                             <ul>
-                                <li><a href="#">- 红蜻蜓</a></li>
+                                <li><a href="#">- 与红蜻蜓</a></li>
+                                <li><a href="#">- 旅游论坛</a></li>
                                 <li><a href="#">- 蜻蜓主版</a></li>
+                                <li><a href="#">- 胆小勿入</a></li>
                                 <li><a href="#">- 蜻蜓之家</a></li>
+                                <li><a href="#">- 征婚交友</a></li>
                                 <li><a href="#">- 蜻蜓杂谈</a></li>
+                                <li><a href="#">- 影视动漫</a></li>
                                 <li><a href="#">- 城市论坛</a></li>
+                                <li><a href="#">- 体育运动</a></li>
                                 <li><a href="#">- 职业交流</a></li>
-                                <li><a href="#">- 大学校园</a></li>
-                                <li><a href="#">- 海外论坛</a></li>
-                                <li><a href="#">- 游戏公会</a></li>
-                                <li><a href="#">- 娱乐八卦</a></li>
-                                <li><a href="#">- 情感天空</a></li>
                             </ul>
                             <ul>
-                                <li><a href="#">- 经济论坛</a></li>
-                                <li><a href="#">- 数码地带</a></li>
-                                <li><a href="#">- 蜻蜓杂谈</a></li>
-                                <li><a href="#">- 胆小猫人</a></li>
-                                <li><a href="#">- 征婚交友</a></li>
-                                <li><a href="#">- 体育运动</a></li>
+                                <li><a href="#">- 家有儿女</a></li>
+                                <li><a href="#">- 大学校园</a></li>
                                 <li><a href="#">- 原创文学</a></li>
-                                <li><a href="#">- 星斯卡</a></li>
-                                <li><a href="#">- 同名树洞</a></li>
-                                <li><a href="#">- 吃喝玩乐</a></li>
+                                <li><a href="#">- 海外论坛</a></li>
+                                <li><a href="#">- 星座占卜</a></li>
+                                <li><a href="#">- 游戏公会</a></li>
+                                <li><a href="#">- 匿名树洞</a></li>
+                                <li><a href="#">- 娱乐八卦</a></li>
+                                <li><a href="#">- 吃货联盟</a></li>
+                                <li><a href="#">- 情感天空</a></li>
                                 <li><a href="#">- 宠物花草</a></li>
                             </ul>
                         </div>
@@ -394,7 +424,7 @@
                                     <li><a href="#">- 论坛规则【新人必看】</a></li>
                                     <li><a href="#">- 新手帮助</a></li>
                                     <li><a href="#">- 版主申请/招募</a></li>
-                                    <li><a href="#">- 违规公示</a></li>
+                                    <li><a href="violation.html">- 违规公示</a></li>
                                     <li><a href="#">- 意见反馈</a></li>
                                 </ul>
                             </div>
@@ -418,9 +448,14 @@
     
     <script src="script.js"></script>
     
+    <!-- 浮窗导航图标 -->
+    <div class="floating-ad">
+        <img src="images/红蜻蜓.png" alt="红蜻蜓">
+    </div>
+    
     <!-- 浮窗广告 -->
     <div class="floating-ad2">
-        <img src="images/ads.jpg" alt="广告">
+        <img src="images/浮窗广告.png" alt="广告">
     </div>
     
     <!-- 右下角弹窗广告 -->
@@ -433,7 +468,7 @@
     
     <!-- 左侧假关闭按钮（实际是跳转链接） -->
     <div class="left-close-btn">
-        <a href="https://www.bilibili.com/video/BV1UT42167xb?t=0" class="popup-close" target="_blank">关闭广告</a>
+        <span class="popup-close" data-href="https://www.bilibili.com/video/BV1UT42167xb?t=0">关闭广告</span>
     </div>
 </body>
 </html>

@@ -35,7 +35,7 @@ body::before {
     background-color: #FAFAE9;
     mix-blend-mode: multiply;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 100;
     display: block;
 }
 
@@ -172,10 +172,12 @@ body::before {
     align-items: center;
     justify-content: center;
     color: black;
+    position: relative;
 }
 
 .audio-icon {
     display: block;
+    position: relative;
 }
 
 .audio-toggle.paused .audio-icon::after {
@@ -184,7 +186,9 @@ body::before {
     font-size: 16px;
     font-weight: bold;
     color: #cc0000;
-    transform: translate(2px, -2px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .user-links a {
@@ -297,23 +301,21 @@ body::before {
 
 .section-header {
     background-color: white;
-    padding: 4px 8px 4px 18px;
+    padding: 4px 8px 4px 8px;
     font-size: 18px;
     font-weight: bold;
-    color: #cc0000;
+    color: #000;
     position: relative;
+    border-bottom: 1px solid #ddd;
 }
 
 .section-header::before {
-    content: ">";
-    position: absolute;
-    left: 6px;
-    color: #cc0000;
+    content: none;
 }
 
 .scrollable-content {
     max-height: 250px;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     padding: 5px;
     background-color: white;
@@ -393,9 +395,19 @@ body::before {
 .announcement h4 {
     font-size: 18px;
     font-weight: bold;
-    color: #000;
+    color: #cc0000;
     margin: 0 0 5px 0;
-    padding-left: 2px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #ccc;
+    padding-left: 15px;
+    position: relative;
+}
+
+.announcement h4::before {
+    content: ">";
+    position: absolute;
+    left: 2px;
+    color: #cc0000;
 }
 
 .announcement ul {
@@ -901,8 +913,8 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     width: 12vw;
-    max-width: 80px;
-    min-width: 40px;
+    max-width: 150px;
+    min-width: 80px;
     background-color: transparent;
     border: none;
     border-radius: 0;
@@ -920,7 +932,7 @@ footer {
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 1001;
+    z-index: 10001;
     display: none;
 }
 
@@ -978,7 +990,8 @@ footer {
 .left-close-btn {
     position: fixed;
     right: 0;
-    z-index: 1002;
+    z-index: 10002;
+    display: none;
 }
 
 .left-close-btn .popup-close {
