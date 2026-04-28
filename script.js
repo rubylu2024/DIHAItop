@@ -4,14 +4,135 @@
 // 动态加载帖子数据
 async function loadPostData(postId) {
     try {
+        const fromFlarum = await loadPostDataFromFlarum(postId);
+        if (fromFlarum) return fromFlarum;
+
         const response = await fetch(`data/post_${postId}.json`);
-        if (!response.ok) {
-            throw new Error(`帖子数据文件不存在: post_${postId}.json`);
-        }
+        if (!response.ok) throw new Error(`帖子数据文件不存在: post_${postId}.json`);
         return await response.json();
     } catch (error) {
         console.warn('加载帖子数据失败，使用备用数据:', error);
         return getFallbackPostData(postId);
+    }
+}
+
+function getFlarumApiBase() {
+    const globalBase = typeof window !== 'undefined' ? window.FLARUM_API_BASE : null;
+    const storedBase = typeof localStorage !== 'undefined' ? localStorage.getItem('flarumApiBase') : null;
+    const base = (globalBase || storedBase || '/api').trim();
+    return base.endsWith('/') ? base.slice(0, -1) : base;
+}
+
+async function fetchFlarumJson(path, init) {
+    const apiBase = getFlarumApiBase();
+    const url = `${apiBase}${path.startsWith('/') ? '' : '/'}${path}`;
+    const response = await fetch(url, init);
+    if (!response.ok) {
+        const text = await response.text().catch(() => '');
+        const error = new Error(`Flarum API 请求失败: ${response.status} ${response.statusText}`);
+        error.status = response.status;
+        error.responseText = text;
+        throw error;
+    }
+    return response.json();
+}
+
+function formatDateTime(dateString) {
+    if (!dateString) return '';
+    const d = new Date(dateString);
+    if (Number.isNaN(d.getTime())) return dateString;
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+}
+
+function formatDate(dateString) {
+    if (!dateString) return '';
+    const d = new Date(dateString);
+    if (Number.isNaN(d.getTime())) return dateString;
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+function buildIncludedIndex(included) {
+    const index = new Map();
+    (included || []).forEach((item) => {
+        if (!item || !item.type || !item.id) return;
+        index.set(`${item.type}:${item.id}`, item);
+    });
+    return index;
+}
+
+function getRelated(includedIndex, relationship, type) {
+    if (!relationship || !relationship.data) return null;
+    const rel = relationship.data;
+    if (Array.isArray(rel)) return rel.map((r) => includedIndex.get(`${r.type}:${r.id}`)).filter(Boolean);
+    if (type && rel.type !== type) return null;
+    return includedIndex.get(`${rel.type}:${rel.id}`) || null;
+}
+
+function flarumDiscussionToPostData(payload) {
+    const discussion = payload?.data;
+    if (!discussion || discussion.type !== 'discussions') return null;
+
+    const includedIndex = buildIncludedIndex(payload?.included);
+    const starter = getRelated(includedIndex, discussion.relationships?.user, 'users');
+    const posts = (getRelated(includedIndex, discussion.relationships?.posts, 'posts') || [])
+        .slice()
+        .sort((a, b) => (a?.attributes?.number ?? 0) - (b?.attributes?.number ?? 0));
+
+    const opPost = posts.find((p) => (p?.attributes?.number ?? 0) === 1) || null;
+    const opUser = opPost ? getRelated(includedIndex, opPost.relationships?.user, 'users') : starter;
+
+    const title = discussion.attributes?.title || '（无标题）';
+    const createdAt = discussion.attributes?.createdAt || opPost?.attributes?.createdAt || null;
+    const viewCount = discussion.attributes?.viewCount ?? discussion.attributes?.commentCount ?? 0;
+    const allowComments = discussion.attributes?.canReply !== false;
+
+    const opContentHtml = opPost?.attributes?.contentHtml || '';
+
+    const postData = {
+        id: parseInt(discussion.id, 10) || discussion.id,
+        title,
+        author: opUser?.attributes?.username || starter?.attributes?.username || '匿名用户',
+        authorLevel: '用户',
+        authorAvatar: opUser?.attributes?.avatarUrl || 'images/用户头像.png',
+        publishTime: formatDateTime(createdAt),
+        viewCount,
+        allowComments,
+        content: opContentHtml || '<p>（内容为空）</p>',
+        comments: [],
+        __flarum: {
+            discussionId: discussion.id
+        }
+    };
+
+    const replyPosts = posts.filter((p) => (p?.attributes?.number ?? 0) >= 2);
+    postData.comments = replyPosts.map((p) => {
+        const user = getRelated(includedIndex, p.relationships?.user, 'users');
+        const contentHtml = p.attributes?.contentHtml || '<p>（内容为空）</p>';
+        return {
+            id: parseInt(p.id, 10) || p.id,
+            author: user?.attributes?.username || '匿名用户',
+            authorLevel: '用户',
+            authorAvatar: user?.attributes?.avatarUrl || 'images/用户头像.png',
+            time: formatDateTime(p.attributes?.createdAt),
+            floor: p.attributes?.number ?? 0,
+            content: contentHtml,
+            replyTo: null
+        };
+    });
+
+    return postData;
+}
+
+async function loadPostDataFromFlarum(postId) {
+    const id = String(postId || '').trim();
+    if (!/^\d+$/.test(id)) return null;
+    try {
+        const payload = await fetchFlarumJson(`/discussions/${id}?include=posts,posts.user,user`);
+        return flarumDiscussionToPostData(payload);
+    } catch (e) {
+        return null;
     }
 }
 
@@ -227,27 +348,78 @@ function getFallbackPostData(postId) {
 
 // 获取帖子列表（从data文件夹读取）
 async function loadPostList() {
+    const fromFlarum = await loadPostListFromFlarum();
+    if (fromFlarum && fromFlarum.length > 0) return fromFlarum;
+
     const postList = [];
     const postIds = [1, 2, 4, 5, 6];
-    
+
     for (const id of postIds) {
         try {
             const response = await fetch(`data/post_${id}.json`);
-            if (response.ok) {
-                const post = await response.json();
-                postList.push({
-                    id: post.id,
-                    title: post.title,
-                    author: post.author,
-                    date: post.publishTime.split(' ')[0],
-                    views: post.viewCount
-                });
-            }
-        } catch (error) {
-            // 如果文件不存在，跳过
-        }
+            if (!response.ok) continue;
+            const post = await response.json();
+            postList.push({
+                id: post.id,
+                title: post.title,
+                author: post.author,
+                date: post.publishTime.split(' ')[0],
+                views: post.viewCount
+            });
+        } catch (error) {}
     }
     return postList;
+}
+
+async function loadPostListFromFlarum() {
+    try {
+        const payload = await fetchFlarumJson('/discussions?sort=-lastPostedAt&page[limit]=20&include=user');
+        const includedIndex = buildIncludedIndex(payload?.included);
+        const discussions = Array.isArray(payload?.data) ? payload.data : [];
+        return discussions.map((d) => {
+            const starter = getRelated(includedIndex, d.relationships?.user, 'users');
+            const createdAt = d.attributes?.createdAt || null;
+            return {
+                id: parseInt(d.id, 10) || d.id,
+                title: d.attributes?.title || '（无标题）',
+                author: starter?.attributes?.username || '匿名用户',
+                date: formatDate(createdAt),
+                views: d.attributes?.viewCount ?? d.attributes?.commentCount ?? 0
+            };
+        });
+    } catch (e) {
+        return [];
+    }
+}
+
+async function renderPostList() {
+    const container = document.querySelector('.forum-posts');
+    if (!container) return;
+
+    const postList = await loadPostList();
+    container.innerHTML = `
+        <h3>最新发帖</h3>
+        <table class="posts-table">
+            <thead>
+                <tr>
+                    <th style="width: 60%;">标题</th>
+                    <th style="width: 20%;">作者</th>
+                    <th style="width: 12%;">日期</th>
+                    <th style="width: 8%;">热度</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${postList.map(p => `
+                    <tr>
+                        <td><a href="post.html?id=${encodeURIComponent(p.id)}">${p.title}</a></td>
+                        <td>${p.author}</td>
+                        <td>${p.date}</td>
+                        <td>${p.views}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        </table>
+    `;
 }
 
 // 页面加载完成后执行
@@ -267,8 +439,16 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 清理所有遗留的localStorage数据
-    localStorage.clear();
+    // 清理遗留的本地回帖缓存（避免影响其它存储，如 token / 配置）
+    try {
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (!key) continue;
+            if (/^post_\d+_new_comments$/.test(key)) keysToRemove.push(key);
+        }
+        keysToRemove.forEach((k) => localStorage.removeItem(k));
+    } catch (e) {}
     
     // 检查是否是帖子详情页面
     if (window.location.pathname.includes('post.html')) {
@@ -295,6 +475,10 @@ window.addEventListener('DOMContentLoaded', function() {
     const scrollableContent = document.querySelector('.scrollable-content');
     if (scrollableContent) {
         scrollableContent.scrollTop = 0;
+    }
+
+    if (document.querySelector('.forum-posts')) {
+        renderPostList();
     }
 });
 
@@ -507,6 +691,12 @@ function setupReplyButtons(postData) {
             return;
         }
 
+        const discussionId = postData?.__flarum?.discussionId;
+        if (discussionId) {
+            alert('当前页面已接入 Flarum 数据源。回帖需要你的网站实现登录并保存 Token（或通过后端中转）。');
+            return;
+        }
+
         const newComment = {
             id: Date.now(),
             author: name,
@@ -519,16 +709,14 @@ function setupReplyButtons(postData) {
         };
 
         postData.comments.push(newComment);
-        
         localStorage.setItem(`post_${postData.id}_new_comments`, JSON.stringify(postData.comments));
-        
         renderForumThread(postData);
-        
+
         replyForm.reset();
         replyTargetInput.value = '';
         replyBoxTitle.textContent = '发表回复';
         cancelReply.style.display = 'none';
-        
+
         alert('回复发表成功！');
     });
 }
